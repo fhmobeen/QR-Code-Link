@@ -2,6 +2,8 @@
 This page provides HTML links to various documents, which can be easily accessed via QR codes.
 
 > ### Business Card
+ 
+Information regarding the annual account and validity period of the QR code-based business card service can be viewed here.
 
 | SL. | Users Name | Users Number | Price/Year | Total Years | Total Price | Start Date | Expire Date | Link |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

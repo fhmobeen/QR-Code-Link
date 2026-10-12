@@ -1,1 +1,1 @@
-# Business-Card
+# QR Code Link

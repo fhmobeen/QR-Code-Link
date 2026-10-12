@@ -1,16 +1,16 @@
 # QR Code Link
 This page provides HTML links to various documents, which can be easily accessed via QR codes.
 
-> Business Card
+> ### Business Card
 
-| Document Name | Description | Link |
-| --- | --- | --- |
+| SL | Users Name | Users Number| Link |
+| --- | --- | --- | --- |
 | Document 1 | Company Profile | [Link](url) |
 | Document 2 | Product Catalog | [Link](url) |
 
 <table border="1">
   <tr>
-    <th colspan="3">Business Card</th>
+    <th colspan="3">##Business Card</th>
   </tr>
   <tr>
     <th>Document Name</th>

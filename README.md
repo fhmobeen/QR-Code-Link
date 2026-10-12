@@ -1,5 +1,7 @@
 # QR Code Link
 This page provides HTML links to various documents, which can be easily accessed via QR codes.
+
+|Business Card User|
 | Document Name | Description | Link |
 | --- | --- | --- |
 | Document 1 | Company Profile | [Link](url) |

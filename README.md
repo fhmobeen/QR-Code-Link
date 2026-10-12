@@ -2,8 +2,8 @@
 This page provides HTML links to various documents, which can be easily accessed via QR codes.
 
 > ### Business Card
-Information regarding the annual account and validity period of the QR code-based business card service can be viewed here.
 
+Information regarding the annual account and validity period of the QR code-based business card service can be viewed here.
 | SL. | Name | Number | Rate | Time | Total Price | Start Date | Expire Date | Link |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01 | Fuad Hasan Mobeen | +8801709288258 | 1.5k BDT | 2 Years | 3k BDT | 01/01/2026 | 31/12/2027 | [Link](https://fhmobeen.github.io/QR_Code_Link/Business_Card/Fuad_Hasan_Mobeen_+8801709288158.html) |

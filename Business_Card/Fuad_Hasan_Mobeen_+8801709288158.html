@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Business Card - Fuad Hasan Mobeen</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 700px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 650px) {
+            .card-container {
+                flex-direction: row;
+                height: 400px;
+            }
+        }
+
+        /* Left Side: Info */
+        .card-left {
+            flex: 1.3;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-info h1 {
+            font-size: 26px;
+            color: #2b2b2b;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .profile-info h2 {
+            font-size: 15px;
+            color: #d32f2f;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .profile-info h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 3px;
+            background-color: #d32f2f;
+            border-radius: 2px;
+        }
+
+        /* Contact Details */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #4f4f4f;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #d32f2f;
+            transform: translateX(5px);
+        }
+
+        .icon-box {
+            width: 38px;
+            height: 38px;
+            background: rgba(211, 47, 47, 0.1);
+            color: #d32f2f;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .icon-box {
+            background: #d32f2f;
+            color: #ffffff;
+        }
+
+        /* Right Side: Visual & Photo */
+        .card-right {
+            flex: 1;
+            background: linear-gradient(135deg, #8b0000, #400000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        /* Decorative background curves */
+        .card-right::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .avatar-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            background: #fff;
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Action bar for extra WhatsApp button if needed */
+        .extra-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .sub-link {
+            font-size: 12px;
+            color: #777;
+            text-decoration: none;
+            margin-left: 53px;
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 5px;
+        }
+        
+        .sub-link:hover {
+            color: #d32f2f;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Left Section: Details & Interactive Links -->
+        <div class="card-left">
+            <div class="profile-info">
+            <!-- এখানে আপনার নাম বসাতে পারেন -->
+                <h1>Fuad Hasan Mobeen</h1>
+                <!-- এখানে আপনার পদবী বসাতে পারেন -->
+                <h2>Business Consultant</h2>
+            </div>
+
+            <div class="contact-list">
+                <!-- Phone Call Link -->
+                <!-- এখানে আপনার ফোন নাম্বার বসাতে পারেন (কোন প্রকারই স্পেস অথবা হাইপার ব্যবহার করা যাবে না) -->
+                <a href="tel:+8801709288158" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <!-- অবশ্যই এখানেও আপনার ফোন নাম্বার বসাতে হবে (চাইলে স্পেস অথবা হাইপেন ব্যবহার করতে পারেন) -->
+                    <span>+880 1709-288158</span>
+                </a>
+                
+                <!-- WhatsApp Direct Link -->
+                <!-- এখানে আপনার whatsapp নাম্বার বসাতে পারেন -->
+                <a href="https://wa.me/8801709288158" target="_blank" class="sub-link">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat এ মেসেজ পাঠান
+                </a>
+
+                <!-- Email Link -->
+                <a href="mailto:fhmobeen@gmail.com" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <!-- এখানে আপনার ইমেইল এড্রেস বসাতে পারেন -->
+                    <span>fhmobeen@gmail.com</span>
+                </a>
+
+                <!-- Website Link -->
+                <a href="https://www.reallygreatsite.com" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+                    <!-- এখানে আপনার (ওয়েব এড্রেস/ডোমেইন নেম) বসাতে পারেন -->
+                    <span>www.reallygreatsite.com</span>
+                </a>
+
+                <!-- Google Maps Address Link -->
+                <!-- এখানে আপনার এড্রেস অনুযায়ী গুগল ম্যাপ এর লিংক বসাতে পারেন -->
+                <a href="https://maps.app.goo.gl/vvFFUKb9fuGHaokh6?g_st=ac" target="_blank" class="contact-item">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <!-- এখানে আপনার এড্রেস-এর বিবরণ লিখতে পারেন -->
+                    <span>Jamalpur, Dhaka, Bangladesh</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Section: Profile Image & Design Aesthetics -->
+        <div class="card-right">
+            <div class="avatar-frame">
+                <!-- এখানে আপনার ছবির লিঙ্ক বা লোকাল পাথ বসাতে পারেন -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Profile Picture">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

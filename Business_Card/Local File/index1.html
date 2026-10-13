@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuad Hasan Mobeen - Digital Business Card</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind custom configuration for yellow-white glassmorphic theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#FACC15',
+                            500: '#EAB308',
+                            600: '#CA8A04',
+                            300: '#FDE047'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #09090b 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background glowing animated blobs */
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: floatBlob 10s infinite alternate ease-in-out;
+        }
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(30px, 50px) scale(1.1); }
+        }
+
+        /* Glassmorphism card styling */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(250, 204, 21, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(234, 179, 8, 0.1);
+        }
+
+        /* Custom scrollbar for container if needed */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(250, 204, 21, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4 sm:p-6 md:p-10 relative">
+
+    <div class="blob w-72 h-72 sm:w-96 sm:h-96 bg-yellow-500 rounded-full top-10 left-5"></div>
+    <div class="blob w-72 h-72 sm:w-96 sm:h-96 bg-amber-600 rounded-full bottom-10 right-5" style="animation-delay: -5s;"></div>
+
+    <!-- Main Card Wrapper (Single Page Layout) -->
+    <div class="w-full max-w-md mx-auto my-auto">
+        
+        <!-- ================= SINGLE PAGE CONTENT (পারসোনাল ডিটেইলস) ================= -->
+        <div class="glass-panel rounded-3xl p-6 sm:p-8 text-white flex flex-col items-center relative overflow-hidden shadow-2xl">
+            
+            <!-- Top Decorative Badge -->
+            <div class="w-full flex justify-between items-center mb-6">
+                <span class="px-3 py-1 bg-yellow-500/20 border border-yellow-400/40 text-yellow-300 text-xs font-semibold rounded-full tracking-wider uppercase flex items-center gap-1.5">
+                    <i class="fa-solid fa-id-card"></i> Digital Card
+                </span>
+                <span class="px-3 py-1 bg-white/5 border border-white/10 text-gray-300 text-xs rounded-full">
+                    Verified Profile
+                </span>
+            </div>
+
+            <!-- প্রোফাইল ছবি পরিবর্তনের লিংক দেওয়ার জায়গা -->
+            <div class="relative mb-4 group">
+                <div class="absolute -inset-1.5 bg-gradient-to-r from-yellow-400 to-amber-200 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+                <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-yellow-400 bg-gray-900 shadow-xl">
+                    <img id="profileImage" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Fuad Hasan Mobeen" class="w-full h-full object-cover transform hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x400/1e1b4b/FACC15?text=FHM'">
+                </div>
+            </div>
+
+            <!-- নাম পরিবর্তন করার জায়গা -->
+            <h1 id="profileName" class="text-2xl sm:text-3xl font-extrabold text-white tracking-wide text-center mt-1">
+                Fuad Hasan Mobeen
+            </h1>
+
+            <!-- পদবী ও ট্যাগলাইন পরিবর্তনের জায়গা -->
+            <p id="profileDesignation" class="text-yellow-400 font-semibold text-sm sm:text-base mt-1 text-center">
+                Graphics Designer
+            </p>
+            <p id="profileTagline" class="text-gray-300 text-xs sm:text-sm text-center mt-2 px-2 italic font-light">
+                "Creative Visual Artist & Brand Identity Specialist"
+            </p>
+
+            <!-- Divider line -->
+            <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent my-6"></div>
+
+            <!-- কন্টাক্ট ইনফরমেশন এবং বাটনসমূহ -->
+            <!-- ফোন নম্বর ও হোয়াটসঅ্যাপ নম্বর পরিবর্তনের জায়গা -->
+            <div class="w-full space-y-3">
+                <a href="tel:+8801709288158" class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/5 hover:bg-yellow-500/20 border border-white/10 hover:border-yellow-400/50 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-gray-950 transition-colors shadow-inner">
+                        <i class="fa-solid fa-phone text-sm"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-400">Primary Phone</span>
+                        <span class="text-sm font-medium text-white group-hover:text-yellow-300">+880 1709-288158</span>
+                    </div>
+                </a>
+
+                <a href="tel:+8801911951341" class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/5 hover:bg-yellow-500/20 border border-white/10 hover:border-yellow-400/50 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-gray-950 transition-colors shadow-inner">
+                        <i class="fa-solid fa-phone-volume text-sm"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-400">Secondary Phone</span>
+                        <span class="text-sm font-medium text-white group-hover:text-yellow-300">+880 1911-951341</span>
+                    </div>
+                </a>
+
+                <!-- ইমেইল ও ওয়েবসাইট লিংক পরিবর্তনের জায়গা -->
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="https://wa.me/8801709288158" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-3 rounded-2xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 text-emerald-300 font-semibold text-xs sm:text-sm transition-all shadow-md">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+                    </a>
+                    <a href="mailto:fhmobeen@gmail.com" class="flex items-center justify-center gap-2 p-3 rounded-2xl bg-white/5 hover:bg-yellow-500/20 border border-white/10 hover:border-yellow-400/50 text-white font-semibold text-xs sm:text-sm transition-all shadow-md">
+                        <i class="fa-solid fa-envelope text-yellow-400"></i> Email
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-3 rounded-2xl bg-blue-600/20 hover:bg-blue-600/30 border border-blue-500/30 text-blue-300 font-semibold text-xs sm:text-sm transition-all shadow-md">
+                        <i class="fa-solid fa-globe text-base"></i> Website
+                    </a>
+                    <!-- ঠিকানা ও গুগল ম্যাপ লিংক পরিবর্তনের জায়গা -->
+                    <a href="https://maps.app.goo.gl/YFMP3JN6WMufEXuM7?g_st=ac" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 p-3 rounded-2xl bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-400/40 text-yellow-300 font-semibold text-xs sm:text-sm transition-all shadow-md">
+                        <i class="fa-solid fa-location-dot text-base"></i> Location
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Location text -->
+            <div class="mt-5 text-center text-xs text-gray-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-map-pin text-yellow-400"></i> Jamalpur, Dhaka, Bangladesh
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

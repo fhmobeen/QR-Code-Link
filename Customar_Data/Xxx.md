@@ -93,7 +93,7 @@
   </tr>
   <tr>
     <td><b>গুগল ম্যাপ</b></td>
-    <td>.(Link)(https://maps.app.goo.gl/7kjCVRTjBU98yiyV9?g_st=ac).</td>
+    <td><a href="https://maps.app.goo.gl/7KjCVRTjBU98iyV97g?g_st=ac">Link</a></td>
   </tr>
   
 </table>

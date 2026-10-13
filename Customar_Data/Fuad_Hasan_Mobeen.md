@@ -27,7 +27,7 @@
   <tr><td><b>থানা</b></td><td>জামালপুর সদর</td></tr>
   <tr><td><b>জেলা</b></td><td>জামালপুর</td></tr>
   <tr><td><b>দেশ</b></td><td>বাংলাদেশ</td></tr>
-  <tr><td><b>গুগল ম্যাপ</b></td><td><a href="https://maps.app.goo.gl/fgqjW86yUMazG4at9">Link</a></td></tr>
+  <tr><td><b>গুগল ম্যাপ</b></td><td><a href="https://maps.app.goo.gl/fgqjW86yUMazG4at9">Google Map</a></td></tr>
   
 </table>
   

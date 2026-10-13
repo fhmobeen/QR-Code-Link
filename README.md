@@ -8,8 +8,8 @@ Information regarding the annual account and validity period of the QR code-base
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 01 | [Fuad_Hasan_Mobeen](Customar_Data/Fuad_Hasan_Mobeen.md) | +8801709288258 | 1500/= | 2 Years | 3000/= | 01/01/2026 | 31/12/2027 | [Link](https://fhmobeen.github.io/QR_Code_Link/Business_Card/Fuad_Hasan_Mobeen_+8801709288158.html) |
 | 02 | Fuad_Hasan_Mobeen | +8801709288258 | 2000/= | 3 Years | 6000/= | 01/10/2026 | 30/09/2029 | [Link](https://fhmobeen.github.io/QR_Code_Link/Business_Card/Fuad_Hasan_Mobeen-2_+8801709288158.html) |
+| 03 | Rahmot_Ali_Akash | +971542649866 | 3000/= | 2 Years | 6000/= | 13/10/2026 | 12/10/2027 | [Link](https://fhmobeen.github.io/QR_Code_Link/Business_Card/Rahmat_Ali_Akash_+971542649866.html) |
 | - | - | - | - | - | - | - | - | [Link](-) |
-
 
 <!-- এখানে নোটসগুলো ভালোভাবে দেখে নাও: 
 
@@ -19,6 +19,6 @@ Information regarding the annual account and validity period of the QR code-base
 > ### URL সিস্টেম তৈরি কর:
 > ### মনে রাখবে "url" —এর শেষে ".html" ব্যবহার করতে হবে।
 https://fhmobeen.github.io/QR_Code_Link/
-Business_Card/Fuad_Hasan_Mobeen-2_+8801709288158.html
+Business_Card/Rahmat_Ali_Akash_+971542649866.html
 
 এখানে নোটস শেষ হলো -->

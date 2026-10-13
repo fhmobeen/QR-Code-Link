@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th>Serial Number</th>
+      <th>SL.</th>
       <th>Index Name</th>
       <th>Index Link</th>
     </tr>
@@ -9,7 +9,7 @@
   <tbody>
     <tr>
       <td align="center">1</td>
-      <td>Index</td>
+      <td>Index1</td>
       <td><a href="https://fhmobeen.github.io/QR_Code_Link/">Link 1</a></td>
     </tr>
     <tr>

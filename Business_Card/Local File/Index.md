@@ -10,7 +10,7 @@
     <tr>
       <td align="center">1</td>
       <td>Index1</td>
-      <td><a href="https://fhmobeen.github.io/QR_Code_Link/">Link 1</a></td>
+      <td><a href="https://fhmobeen.github.io/QR_Code_Link/Business_Card/Local File/index1.html">Link 1</a></td>
     </tr>
     <tr>
       <td align="center">2</td>

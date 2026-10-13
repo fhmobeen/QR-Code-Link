@@ -1,0 +1,361 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Rehmat Ali Akash - Digital Business Card</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-gradient: linear-gradient(135deg, #FFE066 0%, #F59E0B 50%, #D97706 100%);
+            --gold-glow: rgba(245, 158, 11, 0.4);
+            --white-glass: rgba(255, 255, 255, 0.22);
+            --glass-border: rgba(255, 255, 255, 0.45);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f0c20;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated dynamic background with flowing warm yellow & white gradient mesh */
+        .bg-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 230, 100, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 80% 10%, rgba(245, 158, 11, 0.7) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(217, 119, 6, 0.8) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(253, 224, 71, 0.7) 0%, transparent 45%);
+            filter: blur(50px);
+            animation: meshMove 18s ease-in-out infinite alternate;
+        }
+
+        @keyframes meshMove {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.15) rotate(3deg); }
+            100% { transform: scale(1) rotate(-3deg); }
+        }
+
+        /* Frosted Glass Container */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                0 30px 60px -12px rgba(180, 110, 0, 0.25),
+                0 18px 36px -18px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Interactive Glass Item Buttons */
+        .glass-item {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .glass-item:hover {
+            background: rgba(255, 255, 255, 0.55);
+            transform: translateY(-4px) scale(1.01);
+            border-color: #F59E0B;
+            box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.35), 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Gold Gradient Elements */
+        .gold-badge {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+            border: 1px solid #FCD34D;
+            color: #B45309;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+
+        .gold-button {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+            box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .gold-button:hover {
+            background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 50%, #F59E0B 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px -2px rgba(245, 158, 11, 0.6);
+        }
+
+        .gold-icon-box {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FDE68A 100%);
+            border: 1px solid #FBBF24;
+            color: #D97706;
+            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Floating background highlight orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .avatar-frame {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 50%, #F59E0B 100%);
+            padding: 4px;
+            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35), 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-3 sm:p-6 md:p-8 relative">
+
+    <!-- Ambient Mesh Background -->
+    <div class="bg-mesh"></div>
+
+    <!-- Glowing Orbs -->
+    <div class="orb w-80 h-80 bg-yellow-300/40 rounded-full top-5 left-5 blur-3xl"></div>
+    <div class="orb w-96 h-96 bg-amber-500/30 rounded-full bottom-5 right-5 blur-3xl"></div>
+
+    <main class="w-full max-w-md glass-card rounded-3xl p-6 sm:p-8 relative z-10 my-6 text-gray-900 transition-all">
+        
+        <!-- Header Controls -->
+        <div class="flex justify-between items-center mb-6">
+            <span class="gold-badge px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full flex items-center gap-1.5">
+                <i class="fa-solid fa-crown text-amber-600 text-xs"></i> Executive Card
+            </span>
+            <button onclick="shareCard()" class="text-amber-900 bg-white/40 hover:bg-white/70 border border-white/60 p-2.5 rounded-full transition-all duration-300 hover:scale-110 shadow-sm" title="Share Digital Card">
+                <i class="fa-solid fa-share-nodes text-sm"></i>
+            </button>
+        </div>
+
+        <!-- Profile Header -->
+        <div class="flex flex-col items-center text-center mb-8">
+            <div class="relative mb-4 group">
+                <div class="absolute -inset-2 bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 rounded-full blur-md opacity-80 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
+                <div class="avatar-frame relative rounded-full">
+                    <img src="watermarked_img_17052443746751257208.png" 
+                         onerror="this.src='https://placehold.co/160x160/FFFBEB/D97706?text=MRA'" 
+                         alt="Md. Rehmat Ali Akash" 
+                         class="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-full border-2 border-white shadow-inner">
+                </div>
+                <div class="absolute bottom-1 right-1 bg-gradient-to-r from-amber-400 to-yellow-500 border-2 border-white text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg" title="Verified Profile">
+                    <i class="fa-solid fa-check text-xs font-black"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Md. Rehmat Ali Akash</h1>
+            <p class="text-amber-700 font-bold text-base sm:text-lg tracking-wide mb-3 flex items-center gap-1.5">
+                <span>Manager</span>
+            </p>
+            
+            <a href="https://maps.app.goo.gl/bxt9FQmQjrZCDXt98?g_st=ac" target="_blank" class="flex items-center text-slate-800 text-xs sm:text-sm bg-white/40 hover:bg-white/70 border border-white/60 px-4 py-2 rounded-2xl shadow-sm transition-all text-left">
+                <i class="fa-solid fa-location-dot text-amber-600 mr-2 text-base flex-shrink-0"></i>
+                <span class="font-medium leading-tight">Emirates Industrial City - Al Sajja - Sharjah - UAE</span>
+            </a>
+        </div>
+
+        <!-- Interactive Contact Items -->
+        <div class="space-y-3.5 mb-8">
+            
+            <!-- Phone Call -->
+            <a href="tel:+971542649866" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Phone</p>
+                        <p class="text-sm sm:text-base font-bold text-slate-900">+971 54 264 9866</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- WhatsApp Chat -->
+            <a href="https://wa.me/971542649866" target="_blank" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
+                <div class="flex items-center space-x-3.5">
+                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp text-emerald-600"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">WhatsApp</p>
+                        <p class="text-sm sm:text-base font-bold text-slate-900">+971 54 264 9866</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Email Address -->
+            <a href="mailto:ceo.mdakash@gmail.com" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
+                <div class="flex items-center space-x-3.5 min-w-0">
+                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="truncate">
+                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Email</p>
+                        <p class="text-sm sm:text-base font-bold text-slate-900 truncate">ceo.mdakash@gmail.com</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all flex-shrink-0">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Website / Profile -->
+            <a href="https://www.facebook.com/ceo.mdakash" target="_blank" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
+                <div class="flex items-center space-x-3.5 min-w-0">
+                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
+                        <i class="fa-solid fa-globe text-amber-600"></i>
+                    </div>
+                    <div class="truncate">
+                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Website / Profile</p>
+                        <p class="text-sm sm:text-base font-bold text-slate-900 truncate">facebook.com/ceo.mdakash</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all flex-shrink-0">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Google Maps Location -->
+            <a href="https://maps.app.goo.gl/bxt9FQmQjrZCDXt98?g_st=ac" target="_blank" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
+                <div class="flex items-center space-x-3.5 min-w-0">
+                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform flex-shrink-0">
+                        <i class="fa-solid fa-map-location-dot text-amber-700"></i>
+                    </div>
+                    <div class="truncate">
+                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Google Maps</p>
+                        <p class="text-sm sm:text-base font-bold text-slate-900 truncate">Al Sajja, Sharjah, UAE</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all flex-shrink-0">
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Primary Action Buttons -->
+        <div class="grid grid-cols-2 gap-3 mb-6">
+            <button onclick="downloadVCard()" class="gold-button w-full py-3.5 px-4 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-sm uppercase tracking-wider">
+                <i class="fa-solid fa-user-plus text-base"></i>
+                <span>Save Contact</span>
+            </button>
+            <button onclick="toggleQRCode()" class="w-full py-3.5 px-4 bg-white/40 hover:bg-white/70 border border-white/70 text-slate-900 font-extrabold rounded-2xl transition-all flex items-center justify-center space-x-2 text-sm uppercase tracking-wider shadow-sm">
+                <i class="fa-solid fa-qrcode text-base text-amber-700"></i>
+                <span>QR Code</span>
+            </button>
+        </div>
+
+        <!-- QR Code Container -->
+        <div id="qrModal" class="hidden flex flex-col items-center justify-center bg-white/50 backdrop-blur-md p-5 rounded-2xl border border-white/70 mb-6 text-center transition-all animate-fade-in shadow-inner">
+            <p class="text-xs font-bold text-amber-900 mb-3 uppercase tracking-wider">Scan to Share Contact Card</p>
+            <div class="bg-white p-3 rounded-2xl shadow-lg border border-amber-200 inline-block">
+                <img id="qrImage" src="" alt="QR Code" class="w-40 h-40 object-contain">
+            </div>
+            <p class="text-xs text-slate-700 font-medium mt-3">Point mobile camera to open link</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center border-t border-white/30 pt-4">
+            <p class="text-xs font-semibold text-amber-900/70">© Md. Rehmat Ali Akash • Digital Business Card</p>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900/90 text-white px-6 py-3 rounded-full border border-amber-400/40 shadow-2xl backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 text-sm z-50 flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check text-amber-400"></i>
+        <span id="toastMessage">Action completed successfully!</span>
+    </div>
+
+    <script>
+        // Toggle QR Code Box
+        function toggleQRCode() {
+            const modal = document.getElementById('qrModal');
+            const qrImg = document.getElementById('qrImage');
+            if (modal.classList.contains('hidden')) {
+                const currentUrl = window.location.href;
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=000000&bgcolor=ffffff&data=${encodeURIComponent(currentUrl)}`;
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Display Toast Notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMessage');
+            toastMsg.innerText = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        // Share Card via Web Share API or Clipboard Copy
+        function shareCard() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Md. Rehmat Ali Akash - Digital Business Card',
+                    url: window.location.href
+                }).catch(() => {});
+            } else {
+                const dummy = document.createElement('textarea');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                showToast('Card link copied to clipboard!');
+            }
+        }
+
+        // Download Contact (.vcf)
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Md. Rehmat Ali Akash
+TITLE:Manager
+TEL;TYPE=WORK,VOICE:+971542649866
+TEL;TYPE=CELL,WHATSAPP:+971542649866
+EMAIL:ceo.mdakash@gmail.com
+URL:https://www.facebook.com/ceo.mdakash
+ADR;TYPE=WORK:;;Emirates Industrial City - Al Sajja;Sharjah;;;United Arab Emirates
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Md_Rehmat_Ali_Akash.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            showToast('Contact (.vcf) saved to your device!');
+        }
+    </script>
+</body>
+</html>
+```

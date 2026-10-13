@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- পরিবর্তনযোগ্য: ওয়েবসাইটের শিরোনাম/টাইটেল -->
+  <title>Fuad Hasan Mobeen - Digital Business Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8fafc;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-outfit { font-family: 'Outfit', sans-serif; }
+    
+    /* Dynamic Glassmorphism Ambient Background */
+    .bg-aurora {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f0fdf4 50%, #fdf2f8 75%, #faf5ff 100%);
+      background-size: 400% 400%;
+      animation: aurora 15s ease infinite;
+    }
+    @keyframes aurora {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Fully Responsive Light Frosted Glass Container */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .glass-item {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      transition: all 0.25s ease;
+    }
+    .glass-item:hover {
+      background: rgba(255, 255, 255, 0.98);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Rotating Gradient Border for Avatar */
+    .avatar-ring {
+      position: relative;
+    }
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      background: conic-gradient(from 0deg, #3b82f6, #06b6d4, #10b981, #ec4899, #8b5cf6, #3b82f6);
+      animation: spin 6s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="bg-aurora min-h-screen text-slate-800 flex items-center justify-center p-3 sm:p-6 md:p-10 relative overflow-x-hidden">
+
+  <!-- Floating Ambient Orbs for Extra Depth -->
+  <div class="fixed top-10 left-10 w-64 md:w-80 h-64 md:h-80 bg-blue-300/30 rounded-full filter blur-3xl pointer-events-none"></div>
+  <div class="fixed bottom-10 right-10 w-72 md:w-96 h-72 md:h-96 bg-purple-300/30 rounded-full filter blur-3xl pointer-events-none"></div>
+
+  <!-- Main Responsive Card Container -->
+  <main class="w-full max-w-sm sm:max-w-md md:max-w-lg glass-card rounded-3xl p-5 sm:p-8 md:p-10 relative z-10 my-auto">
+    
+    <!-- Profile Header Section -->
+    <div class="text-center mb-6 sm:mb-8">
+      
+      <!-- পরিবর্তনযোগ্য: প্রোফাইল ছবি (src এর ভেতরে নিজের ছবির লিংক দিন) -->
+      <div class="avatar-ring w-24 sm:w-28 h-24 sm:h-28 mx-auto mb-4 p-1">
+        <div class="w-full h-full rounded-full overflow-hidden relative z-10 bg-white shadow-inner">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Fuad Hasan Mobeen" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- পরিবর্তনযোগ্য: স্ট্যাটাস ব্যাজ -->
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100/80 text-emerald-700 border border-emerald-200/60 mb-3">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        Available for Projects
+      </span>
+
+      <!-- পরিবর্তনযোগ্য: নাম -->
+      <h1 class="text-xl sm:text-2xl md:text-3xl font-bold font-outfit text-slate-900 tracking-tight">Fuad Hasan Mobeen</h1>
+      
+      <!-- পরিবর্তনযোগ্য: পদবী -->
+      <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-indigo-600 mt-1">Graphics Designer</p>
+      
+      <!-- পরিবর্তনযোগ্য: ডেসক্রিপশন -->
+      <p class="text-xs sm:text-sm text-slate-500 mt-2 max-w-xs sm:max-w-sm mx-auto leading-relaxed">
+        Crafting Premium Visuals, Brand Identities & Digital Aesthetics
+      </p>
+    </div>
+
+    <!-- Contact Direct Links -->
+    <div class="space-y-2.5 sm:space-y-3">
+
+      <!-- পরিবর্তনযোগ্য: প্রথম ফোন নম্বর -->
+      <a href="tel:+8801709288158" class="glass-item flex items-center justify-between p-3 sm:p-3.5 rounded-2xl text-slate-700 hover:text-indigo-600">
+        <div class="flex items-center gap-3">
+          <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-sm sm:text-base">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Primary Phone</p>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">+880 1709-288158</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+      </a>
+
+      <!-- পরিবর্তনযোগ্য: দ্বিতীয় ফোন নম্বর -->
+      <a href="tel:+8801911951341" class="glass-item flex items-center justify-between p-3 sm:p-3.5 rounded-2xl text-slate-700 hover:text-indigo-600">
+        <div class="flex items-center gap-3">
+          <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-sm sm:text-base">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Secondary Phone</p>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">+880 1911-951341</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+      </a>
+
+      <!-- পরিবর্তনযোগ্য: হোয়াটসঅ্যাপ নম্বর -->
+      <a href="https://wa.me/8801709288158" target="_blank" class="glass-item flex items-center justify-between p-3 sm:p-3.5 rounded-2xl text-slate-700 hover:text-emerald-600">
+        <div class="flex items-center gap-3">
+          <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-sm sm:text-base">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">WhatsApp Chat</p>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">+880 1709-288158</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-paper-plane text-xs text-slate-400"></i>
+      </a>
+
+      <!-- পরিবর্তনযোগ্য: ইমেইল এড্রেস -->
+      <a href="mailto:fhmobeen@gmail.com" class="glass-item flex items-center justify-between p-3 sm:p-3.5 rounded-2xl text-slate-700 hover:text-rose-600">
+        <div class="flex items-center gap-3">
+          <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-sm sm:text-base">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Email Address</p>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">fhmobeen@gmail.com</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+      </a>
+
+      <!-- পরিবর্তনযোগ্য: পোর্টফোলিও বা ওয়েবসাইট লিংক (href-এ আপনার ওয়েবসাইটের URL দিন) -->
+      <a href="https://yourwebsite.com" target="_blank" class="glass-item flex items-center justify-between p-3 sm:p-3.5 rounded-2xl text-slate-700 hover:text-blue-600">
+        <div class="flex items-center gap-3">
+          <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-sm sm:text-base">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Official Website</p>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">yourwebsite.com</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400"></i>
+      </a>
+
+      <!-- পরিবর্তনযোগ্য: লোকেশন ও গুগল ম্যাপ লিংক -->
+      <a href="https://maps.app.goo.gl/YFMP3JN6WMufEXuM7?g_st=ac" target="_blank" class="glass-item flex items-center justify-between p-3 sm:p-3.5 rounded-2xl text-slate-700 hover:text-amber-600">
+        <div class="flex items-center gap-3">
+          <div class="w-9 sm:w-10 h-9 sm:h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-sm sm:text-base">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="text-left">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Location</p>
+            <p class="text-xs sm:text-sm font-semibold text-slate-800">Jamalpur, Dhaka, Bangladesh</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-map-location-dot text-xs text-slate-400"></i>
+      </a>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="text-center mt-6 sm:mt-8 pt-4 border-t border-slate-200/60">
+      <!-- পরিবর্তনযোগ্য: ফুটার কপিরাইট -->
+      <p class="text-[10px] sm:text-[11px] font-medium text-slate-400">© Fuad Hasan Mobeen. All rights reserved.</p>
+    </div>
+
+  </main>
+
+</body>
+</html>

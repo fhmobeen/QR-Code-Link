@@ -1,361 +1,543 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Rehmat Ali Akash - Digital Business Card</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <!-- 
+        ==========================================================================
+        ১. ব্রাউজার ট্যাবের শিরোনাম (Title)
+        ==========================================================================
+        নিচের <title> ট্যাগের ভেতরের টেক্সটটি ব্রাউজারের ট্যাবে প্রদর্শিত হবে।
+    -->
+    <title>Md. Rehmat Ali Akash - Interactive Digital Business Card</title>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Google Fonts (Poppins & Hind Siliguri) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --gold-gradient: linear-gradient(135deg, #FFE066 0%, #F59E0B 50%, #D97706 100%);
-            --gold-glow: rgba(245, 158, 11, 0.4);
-            --white-glass: rgba(255, 255, 255, 0.22);
-            --glass-border: rgba(255, 255, 255, 0.45);
+            --primary-yellow: #FFB703;
+            --bright-yellow: #FFD166;
+            --accent-gold: #FB8500;
+            --pure-white: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-card-bg: rgba(255, 255, 255, 0.22);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-glow: rgba(255, 215, 0, 0.35);
+            --text-dark: #1E293B;
+            --text-muted: #475569;
+            --shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #0f0c20;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFF9E6 0%, #FFE8A3 35%, #FFD166 70%, #FFF8E7 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            padding: 20px 15px;
+            position: relative;
             overflow-x: hidden;
         }
 
-        /* Animated dynamic background with flowing warm yellow & white gradient mesh */
-        .bg-mesh {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(255, 230, 100, 0.8) 0%, transparent 40%),
-                radial-gradient(circle at 80% 10%, rgba(245, 158, 11, 0.7) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
-                radial-gradient(circle at 85% 85%, rgba(217, 119, 6, 0.8) 0%, transparent 40%),
-                radial-gradient(circle at 20% 80%, rgba(253, 224, 71, 0.7) 0%, transparent 45%);
-            filter: blur(50px);
-            animation: meshMove 18s ease-in-out infinite alternate;
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes meshMove {
-            0% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.15) rotate(3deg); }
-            100% { transform: scale(1) rotate(-3deg); }
-        }
-
-        /* Frosted Glass Container */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 
-                0 30px 60px -12px rgba(180, 110, 0, 0.25),
-                0 18px 36px -18px rgba(0, 0, 0, 0.3),
-                inset 0 1px 1px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Interactive Glass Item Buttons */
-        .glass-item {
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .glass-item:hover {
-            background: rgba(255, 255, 255, 0.55);
-            transform: translateY(-4px) scale(1.01);
-            border-color: #F59E0B;
-            box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.35), 0 0 15px rgba(255, 255, 255, 0.6);
-        }
-
-        /* Gold Gradient Elements */
-        .gold-badge {
-            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-            border: 1px solid #FCD34D;
-            color: #B45309;
-            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-        }
-
-        .gold-button {
-            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
-            box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .gold-button:hover {
-            background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 50%, #F59E0B 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px -2px rgba(245, 158, 11, 0.6);
-        }
-
-        .gold-icon-box {
-            background: linear-gradient(135deg, #FFFBEB 0%, #FDE68A 100%);
-            border: 1px solid #FBBF24;
-            color: #D97706;
-            box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
-        }
-
-        /* Floating background highlight orbs */
-        .orb {
-            position: fixed;
+        /* Ambient Glass Orbs */
+        .ambient-orb {
+            position: absolute;
             border-radius: 50%;
-            pointer-events: none;
+            filter: blur(60px);
             z-index: 1;
+            pointer-events: none;
         }
 
-        .avatar-frame {
-            background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 50%, #F59E0B 100%);
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.8);
+            top: -50px;
+            left: -50px;
+        }
+
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 183, 3, 0.4);
+            bottom: -50px;
+            right: -50px;
+        }
+
+        /* Glass Container Card */
+        .glass-card {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 420px;
+            background: var(--glass-card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 35px 24px;
+            box-shadow: 
+                0 20px 50px rgba(212, 160, 23, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 25px 60px rgba(212, 160, 23, 0.25),
+                0 0 25px var(--glass-glow);
+        }
+
+        /* Profile Image Frame */
+        .profile-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--pure-white), var(--primary-yellow), var(--pure-white));
+            animation: rotateRing 6s linear infinite;
+        }
+
+        @keyframes rotateRing {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
             padding: 4px;
-            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35), 0 0 20px rgba(255, 255, 255, 0.8);
+            background: var(--pure-white);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* User Details */
+        .user-name {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+
+        .user-title {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #855300;
+            background: rgba(255, 183, 3, 0.25);
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 183, 3, 0.4);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* Quick Action Bar */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 8px;
+            background: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 18px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .action-btn i {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+            color: #B37B00;
+        }
+
+        .action-btn span {
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .action-btn:hover {
+            background: var(--pure-white);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 183, 3, 0.3);
+            border-color: var(--primary-yellow);
+        }
+
+        .action-btn:hover i {
+            color: var(--accent-gold);
+            transform: scale(1.1);
+        }
+
+        /* Detailed Contact Info List */
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.7);
+            border-color: var(--primary-yellow);
+            transform: translateX(4px);
+            box-shadow: 0 5px 15px rgba(255, 183, 3, 0.2);
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #FFF0B3, #FFD166);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 14px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+
+        .icon-box i {
+            color: #7A5200;
+            font-size: 1.1rem;
+        }
+
+        .contact-text {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .contact-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            display: block;
+        }
+
+        .contact-val {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+
+        /* Save Contact Button */
+        .save-vcard-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #FFB703 0%, #FB8500 100%);
+            color: var(--pure-white);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(251, 133, 0, 0.35);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .save-vcard-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(251, 133, 0, 0.45);
+            background: linear-gradient(135deg, #FFC324 0%, #FF9214 100%);
+        }
+
+        .save-vcard-btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .card-footer {
+            margin-top: 20px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 380px) {
+            .glass-card {
+                padding: 25px 16px;
+            }
+            .user-name {
+                font-size: 1.35rem;
+            }
+            .quick-actions {
+                gap: 8px;
+            }
+            .action-btn {
+                padding: 10px 4px;
+            }
         }
     </style>
 </head>
-<body class="flex items-center justify-center p-3 sm:p-6 md:p-8 relative">
+<body>
 
-    <!-- Ambient Mesh Background -->
-    <div class="bg-mesh"></div>
+    <!-- Background Orbs -->
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
 
-    <!-- Glowing Orbs -->
-    <div class="orb w-80 h-80 bg-yellow-300/40 rounded-full top-5 left-5 blur-3xl"></div>
-    <div class="orb w-96 h-96 bg-amber-500/30 rounded-full bottom-5 right-5 blur-3xl"></div>
-
-    <main class="w-full max-w-md glass-card rounded-3xl p-6 sm:p-8 relative z-10 my-6 text-gray-900 transition-all">
+    <!-- Main Glass Card Frame -->
+    <div class="glass-card">
         
-        <!-- Header Controls -->
-        <div class="flex justify-between items-center mb-6">
-            <span class="gold-badge px-3.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full flex items-center gap-1.5">
-                <i class="fa-solid fa-crown text-amber-600 text-xs"></i> Executive Card
-            </span>
-            <button onclick="shareCard()" class="text-amber-900 bg-white/40 hover:bg-white/70 border border-white/60 p-2.5 rounded-full transition-all duration-300 hover:scale-110 shadow-sm" title="Share Digital Card">
-                <i class="fa-solid fa-share-nodes text-sm"></i>
-            </button>
-        </div>
-
-        <!-- Profile Header -->
-        <div class="flex flex-col items-center text-center mb-8">
-            <div class="relative mb-4 group">
-                <div class="absolute -inset-2 bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 rounded-full blur-md opacity-80 group-hover:opacity-100 transition duration-500 animate-pulse"></div>
-                <div class="avatar-frame relative rounded-full">
-                    <img src="watermarked_img_17052443746751257208.png" 
-                         onerror="this.src='https://placehold.co/160x160/FFFBEB/D97706?text=MRA'" 
-                         alt="Md. Rehmat Ali Akash" 
-                         class="w-32 h-32 sm:w-36 sm:h-36 object-cover rounded-full border-2 border-white shadow-inner">
-                </div>
-                <div class="absolute bottom-1 right-1 bg-gradient-to-r from-amber-400 to-yellow-500 border-2 border-white text-white w-8 h-8 rounded-full flex items-center justify-center shadow-lg" title="Verified Profile">
-                    <i class="fa-solid fa-check text-xs font-black"></i>
-                </div>
+        <!-- 
+            ==========================================================================
+            ২. প্রোফাইল ছবি (Profile Picture)
+            ==========================================================================
+            নিচের <img> ট্যাগের 'src' অ্যাট্রিবিউটে আপনার ছবির ফাইল নাম/পাথ বসান।
+            যেমন: src="my-photo.jpg" অথবা অনলাইন লিংক: src="https://example.com/photo.jpg"
+        -->
+        <div class="profile-container">
+            <div class="profile-ring"></div>
+            <div class="profile-img-wrapper">
+                <img src="12774.jpg" alt="Md. Rehmat Ali Akash" class="profile-img">
             </div>
+        </div>
+
+        <!-- 
+            ==========================================================================
+            ৩. নাম এবং পদবী (Name & Job Title)
+            ==========================================================================
+            নিচের <h2> ট্যাগে আপনার নাম এবং <span> ট্যাগে আপনার পদবী পরিবর্তন করুন।
+        -->
+        <h2 class="user-name">Md. Rehmat Ali Akash</h2>
+        <span class="user-title">Manager</span>
+
+        <!-- 
+            ==========================================================================
+            ৪. কুইক অ্যাকশন বাটনসমূহ (Quick Action Buttons)
+            ==========================================================================
+            এখানে ক্লিক করলে সরাসরি কল, হোয়াটসঅ্যাপ, ইমেইল এবং ওয়েবসাইটে নিয়ে যাবে।
+            - href="tel:+971542649866" এর জায়গায় আপনার কল দেওয়ার নম্বর দিন।
+            - href="https://wa.me/971542649866" এর জায়গায় আপনার হোয়াটসঅ্যাপ নম্বর দিন (কান্ট্রি কোডসহ)।
+            - href="mailto:ceo.mdakash@gmail.com" এর জায়গায় আপনার ইমেইল দিন।
+            - href="https://www.facebook.com/ceo.mdakash" এর জায়গায় আপনার ওয়েবসাইটের লিংক দিন।
+        -->
+        <div class="quick-actions">
+            <!-- কল বাটন -->
+            <a href="tel:+971542649866" class="action-btn" title="Call Now">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call</span>
+            </a>
             
-            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-1">Md. Rehmat Ali Akash</h1>
-            <p class="text-amber-700 font-bold text-base sm:text-lg tracking-wide mb-3 flex items-center gap-1.5">
-                <span>Manager</span>
-            </p>
+            <!-- হোয়াটসঅ্যাপ বাটন -->
+            <a href="https://wa.me/971542649866" target="_blank" class="action-btn" title="WhatsApp Chat">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
             
-            <a href="https://maps.app.goo.gl/bxt9FQmQjrZCDXt98?g_st=ac" target="_blank" class="flex items-center text-slate-800 text-xs sm:text-sm bg-white/40 hover:bg-white/70 border border-white/60 px-4 py-2 rounded-2xl shadow-sm transition-all text-left">
-                <i class="fa-solid fa-location-dot text-amber-600 mr-2 text-base flex-shrink-0"></i>
-                <span class="font-medium leading-tight">Emirates Industrial City - Al Sajja - Sharjah - UAE</span>
+            <!-- ইমেইল বাটন -->
+            <a href="mailto:ceo.mdakash@gmail.com" class="action-btn" title="Send Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
             </a>
-        </div>
-
-        <!-- Interactive Contact Items -->
-        <div class="space-y-3.5 mb-8">
             
-            <!-- Phone Call -->
-            <a href="tel:+971542649866" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
-                <div class="flex items-center space-x-3.5">
-                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Phone</p>
-                        <p class="text-sm sm:text-base font-bold text-slate-900">+971 54 264 9866</p>
-                    </div>
+            <!-- ওয়েবসাইট বাটন (ওয়েবসাইট গ্লোব আইকন দেওয়া হয়েছে) -->
+            <a href="https://www.facebook.com/ceo.mdakash" target="_blank" class="action-btn" title="Visit Website">
+                <i class="fa-solid fa-globe"></i>
+                <span>Website</span>
+            </a>
+        </div>
+
+        <!-- 
+            ==========================================================================
+            ৫. বিস্তারিত যোগাযোগের তালিকা (Detailed Contact List)
+            ==========================================================================
+            নিচের প্রতিটি সেকশনে আপনার তথ্যসমূহ আপডেট করুন।
+        -->
+        <div class="contact-list">
+            
+            <!-- ফোন নম্বর সেকশন -->
+            <a href="tel:+971542649866" class="contact-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
                 </div>
-                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                <div class="contact-text">
+                    <span class="contact-label">Phone</span>
+                    <!-- এখানে প্রদর্শিত ফোন নম্বর পরিবর্তন করুন -->
+                    <span class="contact-val">+971 54 264 9866</span>
                 </div>
             </a>
 
-            <!-- WhatsApp Chat -->
-            <a href="https://wa.me/971542649866" target="_blank" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
-                <div class="flex items-center space-x-3.5">
-                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-whatsapp text-emerald-600"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">WhatsApp</p>
-                        <p class="text-sm sm:text-base font-bold text-slate-900">+971 54 264 9866</p>
-                    </div>
+            <!-- ইমেইল সেকশন -->
+            <a href="mailto:ceo.mdakash@gmail.com" class="contact-item">
+                <div class="icon-box">
+                    <i class="fa-regular fa-paper-plane"></i>
                 </div>
-                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                <div class="contact-text">
+                    <span class="contact-label">Email</span>
+                    <!-- এখানে প্রদর্শিত ইমেইল আইডি পরিবর্তন করুন -->
+                    <span class="contact-val">ceo.mdakash@gmail.com</span>
                 </div>
             </a>
 
-            <!-- Email Address -->
-            <a href="mailto:ceo.mdakash@gmail.com" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
-                <div class="flex items-center space-x-3.5 min-w-0">
-                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform flex-shrink-0">
-                        <i class="fa-solid fa-envelope"></i>
-                    </div>
-                    <div class="truncate">
-                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Email</p>
-                        <p class="text-sm sm:text-base font-bold text-slate-900 truncate">ceo.mdakash@gmail.com</p>
-                    </div>
+            <!-- ওয়েবসাইট সেকশন (ওয়েবসাইট গ্লোব আইকন ব্যবহার করা হয়েছে) -->
+            <a href="https://www.facebook.com/ceo.mdakash" target="_blank" class="contact-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-globe"></i>
                 </div>
-                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all flex-shrink-0">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                <div class="contact-text">
+                    <span class="contact-label">Website</span>
+                    <!-- এখানে প্রদর্শিত ওয়েবসাইট লিংক/টেক্সট পরিবর্তন করুন -->
+                    <span class="contact-val">www.facebook.com/ceo.mdakash</span>
                 </div>
             </a>
 
-            <!-- Website / Profile -->
-            <a href="https://www.facebook.com/ceo.mdakash" target="_blank" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
-                <div class="flex items-center space-x-3.5 min-w-0">
-                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition-transform flex-shrink-0">
-                        <i class="fa-solid fa-globe text-amber-600"></i>
-                    </div>
-                    <div class="truncate">
-                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Website / Profile</p>
-                        <p class="text-sm sm:text-base font-bold text-slate-900 truncate">facebook.com/ceo.mdakash</p>
-                    </div>
+            <!-- লোকেশন / ঠিকানা সেকশন -->
+            <!-- href="..." এর ভেতরে আপনার গুগলের ম্যাপ লিংকটি আপডেট করুন -->
+            <a href="https://maps.app.goo.gl/bxt9FQmQjrZCDXt98?g_st=ac" target="_blank" class="contact-item">
+                <div class="icon-box">
+                    <i class="fa-solid fa-location-dot"></i>
                 </div>
-                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all flex-shrink-0">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </div>
-            </a>
-
-            <!-- Google Maps Location -->
-            <a href="https://maps.app.goo.gl/bxt9FQmQjrZCDXt98?g_st=ac" target="_blank" class="glass-item flex items-center justify-between p-3.5 sm:p-4 rounded-2xl text-slate-900 group">
-                <div class="flex items-center space-x-3.5 min-w-0">
-                    <div class="gold-icon-box w-11 h-11 rounded-xl flex items-center justify-center text-lg group-hover:scale-110 transition-transform flex-shrink-0">
-                        <i class="fa-solid fa-map-location-dot text-amber-700"></i>
-                    </div>
-                    <div class="truncate">
-                        <p class="text-xs text-amber-900/70 font-semibold uppercase tracking-wider">Google Maps</p>
-                        <p class="text-sm sm:text-base font-bold text-slate-900 truncate">Al Sajja, Sharjah, UAE</p>
-                    </div>
-                </div>
-                <div class="w-8 h-8 rounded-full bg-white/40 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all flex-shrink-0">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                <div class="contact-text">
+                    <span class="contact-label">Location</span>
+                    <!-- এখানে প্রদর্শিত ঠিকানা পরিবর্তন করুন -->
+                    <span class="contact-val">Emirates Industrial City - Al Sajja - Sharjah - UAE</span>
                 </div>
             </a>
 
         </div>
 
-        <!-- Primary Action Buttons -->
-        <div class="grid grid-cols-2 gap-3 mb-6">
-            <button onclick="downloadVCard()" class="gold-button w-full py-3.5 px-4 text-white font-extrabold rounded-2xl flex items-center justify-center space-x-2 text-sm uppercase tracking-wider">
-                <i class="fa-solid fa-user-plus text-base"></i>
-                <span>Save Contact</span>
-            </button>
-            <button onclick="toggleQRCode()" class="w-full py-3.5 px-4 bg-white/40 hover:bg-white/70 border border-white/70 text-slate-900 font-extrabold rounded-2xl transition-all flex items-center justify-center space-x-2 text-sm uppercase tracking-wider shadow-sm">
-                <i class="fa-solid fa-qrcode text-base text-amber-700"></i>
-                <span>QR Code</span>
-            </button>
+        <!-- 
+            ==========================================================================
+            ৬. সেভ কন্টাক্ট বাটন (vCard Save Contact Button)
+            ==========================================================================
+            এই বাটনে ক্লিক করলে ফোনের কন্টাক্ট লিস্টে সরাসরি সেভ করার জন্য .vcf ফাইল তৈরি হবে।
+        -->
+        <button class="save-vcard-btn" onclick="downloadVCard()">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Save Contact</span>
+        </button>
+
+        <!-- ফুটার সেকশন -->
+        <div class="card-footer">
+            © <span id="year"></span> Digital Contact Card
         </div>
 
-        <!-- QR Code Container -->
-        <div id="qrModal" class="hidden flex flex-col items-center justify-center bg-white/50 backdrop-blur-md p-5 rounded-2xl border border-white/70 mb-6 text-center transition-all animate-fade-in shadow-inner">
-            <p class="text-xs font-bold text-amber-900 mb-3 uppercase tracking-wider">Scan to Share Contact Card</p>
-            <div class="bg-white p-3 rounded-2xl shadow-lg border border-amber-200 inline-block">
-                <img id="qrImage" src="" alt="QR Code" class="w-40 h-40 object-contain">
-            </div>
-            <p class="text-xs text-slate-700 font-medium mt-3">Point mobile camera to open link</p>
-        </div>
-
-        <!-- Footer -->
-        <div class="text-center border-t border-white/30 pt-4">
-            <p class="text-xs font-semibold text-amber-900/70">© Md. Rehmat Ali Akash • Digital Business Card</p>
-        </div>
-    </main>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-slate-900/90 text-white px-6 py-3 rounded-full border border-amber-400/40 shadow-2xl backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 text-sm z-50 flex items-center space-x-2">
-        <i class="fa-solid fa-circle-check text-amber-400"></i>
-        <span id="toastMessage">Action completed successfully!</span>
     </div>
 
+    <!-- 
+        ==========================================================================
+        ৭. জাভাস্ক্রিপ্ট সেকশন (JavaScript & vCard Generator Data)
+        ==========================================================================
+        কেউ "Save Contact" বাটনে চাপ দিলে আপনার যেসব তথ্য কন্টাক্ট লিস্টে সেভ হবে,
+        তা নিচের JavaScript কোডের ভেতর দেওয়া আছে। প্রয়োজন হলে এগুলাও আপডেট করুন।
+    -->
     <script>
-        // Toggle QR Code Box
-        function toggleQRCode() {
-            const modal = document.getElementById('qrModal');
-            const qrImg = document.getElementById('qrImage');
-            if (modal.classList.contains('hidden')) {
-                const currentUrl = window.location.href;
-                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=000000&bgcolor=ffffff&data=${encodeURIComponent(currentUrl)}`;
-                modal.classList.remove('hidden');
-            } else {
-                modal.classList.add('hidden');
-            }
-        }
+        // অটোমেটিক কারেন্ট বছর সেট করা
+        document.getElementById('year').innerText = new Date().getFullYear();
 
-        // Display Toast Notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toastMessage');
-            toastMsg.innerText = message;
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            toast.classList.add('opacity-100');
-            setTimeout(() => {
-                toast.classList.remove('opacity-100');
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 3000);
-        }
-
-        // Share Card via Web Share API or Clipboard Copy
-        function shareCard() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Md. Rehmat Ali Akash - Digital Business Card',
-                    url: window.location.href
-                }).catch(() => {});
-            } else {
-                const dummy = document.createElement('textarea');
-                document.body.appendChild(dummy);
-                dummy.value = window.location.href;
-                dummy.select();
-                document.execCommand('copy');
-                document.body.removeChild(dummy);
-                showToast('Card link copied to clipboard!');
-            }
-        }
-
-        // Download Contact (.vcf)
+        // vCard কন্টাক্ট ফাইল ডাউনলোড করার ফাংশন
         function downloadVCard() {
-            const vcardData = `BEGIN:VCARD
+            /* 
+               নিচের ভেরিয়েবলগুলোতে আপনার তথ্যসমূহ প্রয়োজন অনুযায়ী আপডেট করতে পারেন:
+            */
+            const contactData = {
+                firstName: "Md. Rehmat Ali",
+                lastName: "Akash",
+                title: "Manager",
+                phone: "+971542649866",
+                email: "ceo.mdakash@gmail.com",
+                url: "https://www.facebook.com/ceo.mdakash",
+                address: "Emirates Industrial City - Al Sajja - Sharjah - United Arab Emirates"
+            };
+
+            // vCard ഫോർമാറ്റ് তৈরি
+            const vCardContent = `BEGIN:VCARD
 VERSION:3.0
-FN:Md. Rehmat Ali Akash
-TITLE:Manager
-TEL;TYPE=WORK,VOICE:+971542649866
-TEL;TYPE=CELL,WHATSAPP:+971542649866
-EMAIL:ceo.mdakash@gmail.com
-URL:https://www.facebook.com/ceo.mdakash
-ADR;TYPE=WORK:;;Emirates Industrial City - Al Sajja;Sharjah;;;United Arab Emirates
+N:${contactData.lastName};${contactData.firstName};;;
+FN:${contactData.firstName} ${contactData.lastName}
+TITLE:${contactData.title}
+TEL;TYPE=CELL,VOICE:${contactData.phone}
+EMAIL;TYPE=WORK,INTERNET:${contactData.email}
+URL:${contactData.url}
+ADR;TYPE=WORK:;;${contactData.address};;;;
 END:VCARD`;
 
-            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Md_Rehmat_Ali_Akash.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-            showToast('Contact (.vcf) saved to your device!');
+            // ফাইল ডাউনলোড ট্রিগার করা
+            const blob = new Blob([vCardContent], { type: 'text/vcard;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute('download', `${contactData.firstName}_${contactData.lastName}.vcf`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
 </html>
-```

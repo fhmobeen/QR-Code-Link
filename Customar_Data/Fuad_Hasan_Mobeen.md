@@ -28,7 +28,7 @@
   <tr><td><b>জেলা</b></td><td>জামালপুর</td></tr>
   <tr><td><b>দেশ</b></td><td>বাংলাদেশ</td></tr>
   <tr><td><b>গুগল ম্যাপ</b></td><td><a href="https://maps.app.goo.gl/7KjCVRTjBU98iyV97g?g_st=ac">Link</a></td></tr>
-  <tr><td><b>গুগল ম্যাপ</b></td><td><a href="[https://maps.app.goo.gl/7KjCVRTjBU9IyV97g?g_st=ac](https://maps.app.goo.gl/7KjCVRTjBU9IyV97g?g_st=ac)" target="_blank" rel="noopener noreferrer">Google Maps</a>
+  <tr><td><b>গুগল ম্যাপ</b></td><td><a href="https://maps.app.goo.gl/7KjCVRTjBU98iyV97g?g_st=ac" target="_blank" rel="noopener noreferrer">Google Maps</a>
 </table>/td></tr>
   
 > ### ১. চুক্তির উদ্দেশ্য

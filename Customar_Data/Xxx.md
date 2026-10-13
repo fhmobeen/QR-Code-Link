@@ -50,51 +50,52 @@
   </tr>
   <tr>
     <td><b>প্রতিষ্ঠান</b></td>
-    <td>[গ্রাহকের প্রতিষ্ঠানের নাম]</td>
-  </tr>
-  <tr>
-    <td><b>NID</b></td>
-    <td>[গ্রাহকের NID]</td>
-  </tr>
-  <tr>
-    <td><b>পাসপোর্ট</b></td>
-    <td>[গ্রাহকের পাসপোর্ট]</td>
-  </tr>
-  <tr>
-    <td><b>লাইসেন্স</b></td>
-    <td>[লাইসেন্স নম্বর]</td>
+    <td>আমিনাজ এন্টারপ্রাইজ</td>
   </tr>
   <tr>
     <td><b>মোবাইল</b></td>
-    <td>[ফোন নম্বর]</td>
+    <td>+৮৮০ ১৭০৯-২৮৮১৫৮ <br> +৮৮০ ১৯১১-৯৫১৩৪১</td>
+  </tr>
+  <tr>
+    <td><b>NID নাম্বার</b></td>
+    <td>১২৩-১২৩-১২৩৪</td>
+  </tr>
+  <tr>
+    <td><b>ট্রেড-লাইসেন্স</b></td>
+    <td>১২৩৪-১২৩-১২৩৪৫</td>
   </tr>
   <tr>
     <td><b>ইমেইল</b></td>
-    <td>[ইমেইল]</td>
+    <td>fhmobeen@gmail.com</td>
   </tr>
   <tr>
     <th colspan="2" align="left" bgcolor="#f8f9fa">🏠 ঠিকানা</th>
   </tr>
   <tr>
     <td><b>গ্রাম/রাস্তা</b></td>
-    <td>[গ্রাম/রাস্তা]</td>
+    <td>ফৌজদারি মোর</td>
   </tr>
   <tr>
     <td><b>পোস্ট কোড</b></td>
-    <td>[পোস্ট কোড]</td>
+    <td>২০০০</td>
   </tr>
   <tr>
     <td><b>থানা</b></td>
-    <td>[থানা/উপজেলা]</td>
+    <td>জামালপুর সদর</td>
   </tr>
   <tr>
     <td><b>জেলা</b></td>
-    <td>[জেলা]</td>
+    <td>জামালপুর</td>
   </tr>
   <tr>
     <td><b>দেশ</b></td>
-    <td>[দেশ]</td>
+    <td>বাংলাদেশ</td>
   </tr>
+  <tr>
+    <td><b>গুগল ম্যাপ</b></td>
+    <td>.(Link)(https://maps.app.goo.gl/7kjCVRTjBU98yiyV9?g_st=ac).</td>
+  </tr>
+  
 </table>
 
     </td>
